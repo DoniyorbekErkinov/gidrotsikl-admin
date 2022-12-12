@@ -12,6 +12,7 @@ import {
   getDoc,
   updateDoc
 } from 'firebase/firestore'
+ import Login from "./Pages/Login/Login";
 const colRef = collection(database, 'data')
 function App() {
   const [data, setData] = useState([])
@@ -26,13 +27,11 @@ function App() {
     })
   }
   useEffect(() => {
-    fetchData()
+    // fetchData()
   }, [])
   return (
     <div className="App">
-      {data.map(e => (
-        <h1 key={e}>{e.title}</h1>
-      ))}
+      <Login/>
     </div>
   );
 }

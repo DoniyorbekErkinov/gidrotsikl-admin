@@ -12,12 +12,6 @@ import {
     updateDoc
 } from 'firebase/firestore'
 
-import {
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut
-} from 'firebase/auth'
-
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyAtFPNG13c2G8c-ejoJxd6pzC1R8kL2GUo",
     authDomain: "gidratsikl-crud.firebaseapp.com",
