@@ -4,24 +4,25 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { privateRoutes, publicRoutes } from "./Route";
 import { AuthContext } from "../context";
+import Dashboard from "../Pages/Home/Dashboard";
+import Home from "../Pages/Home/Home";
+import Login from '../Pages/Login/Login'
+import Users from "../Pages/Users";
 function RouterApp() {
-  const routeComponentsPrivate = privateRoutes.map(({ path, element }, key) => <Route exact path={path} element={element} key={key} />);
-  const routeComponentsPuplic = publicRoutes.map(({ path, element }, key) => <Route exact path={path} element={element} key={key} />);
   const {isAuth, setIsAuth} = useContext(AuthContext)
   return (
     <>
       {isAuth ?
-        <Routes>
-          {routeComponentsPrivate}
-          <Route path="*" element={<Navigate to="404" replace={true} />} />
-          <Route path="/login" element={<Navigate to="/" replace={true} />} />
+        <Routes>        
+          <Route path="/" element={<Home/>} >
+            <Route index element={<Dashboard/>} />          
+            <Route path="/users" element={<Users/>} />          
+          </Route>          
         </Routes>
         :
         <Routes>
-          {routeComponentsPuplic}
-          <Route path="*" element={<Navigate to="/login" replace={true} />} />
+          <Route path="/login" element={<Login/>} />
         </Routes>}
     </>
   );

@@ -6,6 +6,7 @@ import {
   } from 'firebase/auth';
 import { AuthContext } from "../../context";
 import { app } from '../../firebase/firebase';
+import { Navigate } from 'react-router-dom';
 const AUTH = getAuth(app)
 function Login() {
     const [authData, setAuth] = useState({email: "", password: ""})
@@ -15,6 +16,7 @@ function Login() {
         signInWithEmailAndPassword(AUTH, authData.email, authData.password).then(res => {
             localStorage.setItem('access_token', res.user.accessToken)
             setIsAuth(!!localStorage.getItem('access_token'))
+            return <Navigate to={'/'} replace/>
           }).catch(err => {
             console.log(err);
           })
