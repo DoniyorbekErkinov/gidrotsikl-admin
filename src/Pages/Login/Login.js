@@ -1,17 +1,20 @@
  /* eslint-disable */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components'
 import {
     getAuth, signInWithEmailAndPassword, signOut
-  } from 'firebase/auth'
-const AUTH = getAuth()
+  } from 'firebase/auth';
+import { AuthContext } from "../../context";
+import { app } from '../../firebase/firebase';
+const AUTH = getAuth(app)
 function Login() {
     const [authData, setAuth] = useState({email: "", password: ""})
+    const { isAuth, setIsAuth } = useContext(AuthContext)
 
     function Login() {
-        console.log(authData);
         signInWithEmailAndPassword(AUTH, authData.email, authData.password).then(res => {
-            console.log(res);
+            localStorage.setItem('access_token', res.user.accessToken)
+            setIsAuth(!!localStorage.getItem('access_token'))
           }).catch(err => {
             console.log(err);
           })

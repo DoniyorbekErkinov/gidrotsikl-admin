@@ -1,38 +1,26 @@
- /* eslint-disable */
- import './App.css';
- import { useEffect, useState } from 'react';
-import { database } from './firebase/firebase';
+/* eslint-disable */
 import {
-  collection,
-  addDoc,
-  deleteDoc,
-  doc,
-  onSnapshot, query, where, orderBy,
-  serverTimestamp,
-  getDoc,
-  updateDoc
-} from 'firebase/firestore'
- import Login from "./Pages/Login/Login";
-const colRef = collection(database, 'data')
-function App() {
-  const [data, setData] = useState([])
-  function fetchData() {
-    onSnapshot(colRef, (snapshot) => {
-      let arr = []
-      snapshot.docs.forEach((doc) => {
-          arr.push({...doc.data(), id: doc.id})
-      });
-      setData(arr)
-      console.log(arr)
-    })
-  }
+  BrowserRouter as Router,
+} from "react-router-dom";
+import { AuthContext } from "./context";
+import RouterApp from "./routes/RouteApp";
+
+import './App.css';
+import { useEffect, useState } from "react";
+function App() {    
+  const [isAuth, setIsAuth] = useState(false)
   useEffect(() => {
-    // fetchData()
+    if (!!localStorage.getItem('access_token')) {
+      setIsAuth(true)
+    }
   }, [])
-  return (
-    <div className="App">
-      <Login/>
-    </div>
+  return (   
+    <AuthContext.Provider value={{isAuth, setIsAuth}}>
+      <Router>
+        <RouterApp/>
+      </Router>
+    </AuthContext.Provider>
+         
   );
 }
 
