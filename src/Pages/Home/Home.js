@@ -60,10 +60,10 @@ function Home() {
 
     return (
         <Fragment>            
-            <div style={{display: 'flex'}}>
-                <div style={{maxWidth: "300px"}}>            
+            <div style={{display: 'flex', height: '100%'}}>
+                <div style={{maxWidth: "300px", background: 'white', height: '100%'}}>            
                     <Sidebar/>
-                </div>
+                </div> 
                 <Container>
                     <Navbar>
                         <Menu onClick={toggleIsCartOpen}>
@@ -85,6 +85,15 @@ function Home() {
                     </Navbar>
                     <Content>
                         <Outlet/>
+                        <TOP>
+                            <button 
+                                onClick={() => {
+                                    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+                                }}
+                            >
+                                1
+                            </button>
+                        </TOP>
                     </Content>
                 </Container>
             </div>
@@ -93,6 +102,7 @@ function Home() {
 }
 const Container = styled.div`
     width: 100%;
+    height: 100%;
 `;
 const Navbar = styled.div`
     width: 100%;
@@ -158,5 +168,19 @@ const Menu = styled.div`
 `;
 const Content = styled.div`
     padding: 20px 60px;
+    height: 100vh;
+`;
+const TOP = styled.div`
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    button {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50px;
+        color: #ffffff;
+        background: green;
+    }
 `;
 export default Home;

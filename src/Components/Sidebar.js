@@ -14,7 +14,7 @@ import { SideBarContext } from "../context/index";
         
     };
     return (
-        <div className=" bg-gray-100 text-gray-700" >
+        <div className=" bg-white text-gray-700" style={{height: "100%"}}>
         {
             isCartOpen ?
             <aside className="flex w-72 flex-col space-y-2 bg-white p-2" style={{height: "100vh"}}>
@@ -32,12 +32,12 @@ import { SideBarContext } from "../context/index";
                     <span>Dashboard</span>
                 </NavLink>
                 <NavLink 
-                    to={'/users'} 
+                    to={'/departments'} 
                     className="flex items-center text-lg space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600" 
                     style={({ isActive }) => isActive ? activeStyle : undefined}
                 >
                     <span className="text-2xl"><i className="bx bx-home"></i></span>
-                    <span>Users</span>
+                    <span>Departments</span>
                 </NavLink>
             </aside>
             : null

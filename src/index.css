@@ -8,6 +8,8 @@ body,
 html {
     background-color: #f5f5f5;
     box-sizing: border-box;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
 div,
@@ -18,7 +20,6 @@ h4,
 h5,
 h6,
 header,
-html,
 i,
 img,
 label,
@@ -37,6 +38,3 @@ ul {
     background: transparent;
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
