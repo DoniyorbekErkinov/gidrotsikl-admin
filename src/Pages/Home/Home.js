@@ -18,27 +18,27 @@ function Home() {
     const {t} = useTranslation()
     const language = [
         {
+            code: 'uz',
+            name: "O'zbek lotin",
+        },
+        {
+            code: 'cr',
+            name: 'Ўзбек крилл',
+        },
+        {
             code: 'ru',
-            name: 'Russian',
+            name: 'Русский',
         },
         {
             code: 'en',
             name: 'English',
         },
-        {
-            code: 'uz',
-            name: 'Uzbek',
-        },
-        {
-            code: 'cr',
-            name: 'Uzbek cr',
-        }
+        
     ]
 
     const changeLang = (event) => {
-        debugger
-        console.log(event)
-        i18next.changeLanguage(event)
+        localStorage.setItem('lang', event.target.value)
+        i18next.changeLanguage(event.target.value)
     }
 
     const { isCartOpen, setIsCartOpen } = useContext(SideBarContext);
@@ -70,6 +70,16 @@ function Home() {
                             <img src="/images/menu.png" alt=""/>
                         </Menu>
                         <RightSide>
+                        <Languages className={'languages'}>
+                        <select onChange={changeLang}>
+                            <option>Languages</option>
+                            {language.map((option) => (
+                                <option value={option.code} key={option.code} >
+                                    {option.name}
+                                </option>
+                            ))}
+                        </select>
+                        </Languages>
                             <h1 onClick={Logout}>Logout</h1>
                         </RightSide>
                     </Navbar>
@@ -109,7 +119,7 @@ const RightSide = styled.div`
     select {
         margin-right: 10px; 
         height: 30px;
-        width: 100px;
+        width: 120px;
         border: 1px solid blue;
         border-radius: 50px;
         -webkit-appearance: none;
@@ -126,7 +136,15 @@ const RightSide = styled.div`
         } 
     }
 `;
-
+const Languages = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background: transparent;
+    font-weight: 500;
+    padding: 0 !important;
+`;
 const Menu = styled.div`
     max-width: 80px;
     img {

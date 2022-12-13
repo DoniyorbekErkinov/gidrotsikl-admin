@@ -5,7 +5,7 @@ function Users(params) {
     return (
         <div>
             <h1 className="text-3xl text-red-600 ">
-                Users
+                {t('message')}
             </h1>
         </div>
     )
