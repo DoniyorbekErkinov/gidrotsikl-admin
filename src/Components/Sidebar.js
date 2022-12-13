@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { CartContext } from "../context/index";
+import styled from "styled-components";
+import { SideBarContext } from "../context/index";
  function Sidebar() {
-    const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+    const { isCartOpen, setIsCartOpen } = useContext(SideBarContext);
 
     const toggleIsCartOpen = () => {
         setIsCartOpen(!isCartOpen)
@@ -17,10 +18,10 @@ import { CartContext } from "../context/index";
         {
             isCartOpen ?
             <aside className="flex w-72 flex-col space-y-2 bg-white p-2" style={{height: "100vh"}}>
-                <header className="flex w-72 mb-5 items-center justify-between px-2">
-                    <div className="flex items-center text-3xl space-x-2 text-bold">
-                        Logo
-                    </div>
+                <header className="flex w-70 mb-5 items-center">
+                    <Logo >
+                        LOGO
+                    </Logo>
                 </header>
                 <NavLink 
                     to={'/'} 
@@ -45,4 +46,13 @@ import { CartContext } from "../context/index";
     </div>
     );
 }
+const Logo = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 30px;
+    font-weight: 600;
+    font-style: italic;
+`;
 export default Sidebar

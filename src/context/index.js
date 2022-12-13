@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
+let token = !!localStorage.getItem('access_token')
+export const AuthContext = createContext(token);
 
-export const AuthContext = createContext(null);
-
-export const CartContext = createContext({
+export const SideBarContext = createContext({
     isCartOpen: true,
     setIsCartOpen: () => {}
 });
-export const CartProvider = ({ children }) => {
+export const SideBarProvider = ({ children }) => {
     const [isCartOpen, setIsCartOpen] = useState(true);
     
     
@@ -14,5 +14,5 @@ export const CartProvider = ({ children }) => {
         isCartOpen,
         setIsCartOpen
     };
-    return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+    return <SideBarContext.Provider value={value}>{children}</SideBarContext.Provider>;
 };

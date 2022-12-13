@@ -8,12 +8,9 @@ import RouterApp from "./routes/RouteApp";
 import './App.css';
 import { useEffect, useState } from "react";
 function App() {    
-  const [isAuth, setIsAuth] = useState(false)
-  useEffect(() => {
-    if (!!localStorage.getItem('access_token')) {
-      setIsAuth(true)
-    }
-  }, [])
+  const [isAuth, setIsAuth] = useState(!!localStorage.getItem('access_token'))
+  
+  // setIsAuth()
   return (   
     <AuthContext.Provider value={{isAuth, setIsAuth}}>
       <Router>

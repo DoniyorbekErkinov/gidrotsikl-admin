@@ -1,9 +1,9 @@
  /* eslint-disable */
-import { Fragment, useContext } from "react"
+import { Fragment, useContext, useEffect } from "react"
 import { Navigate, Outlet } from "react-router-dom"
 import styled from "styled-components";
 import Sidebar from "../../Components/Sidebar"
-import { CartContext } from "../../context/index";
+import { SideBarContext } from "../../context/index";
 import {
     getAuth, signOut
   } from 'firebase/auth';
@@ -11,8 +11,37 @@ import { AuthContext } from "../../context/index";
 import { app } from '../../firebase/firebase';
 const AUTH = getAuth(app)
 
+import {useTranslation} from "react-i18next";
+import i18next from "i18next";
+
 function Home() {
-    const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+    const {t} = useTranslation()
+    const language = [
+        {
+            code: 'ru',
+            name: 'Russian',
+        },
+        {
+            code: 'en',
+            name: 'English',
+        },
+        {
+            code: 'uz',
+            name: 'Uzbek',
+        },
+        {
+            code: 'cr',
+            name: 'Uzbek cr',
+        }
+    ]
+
+    const changeLang = (event) => {
+        debugger
+        console.log(event)
+        i18next.changeLanguage(event)
+    }
+
+    const { isCartOpen, setIsCartOpen } = useContext(SideBarContext);
 
     const toggleIsCartOpen = () => {
         setIsCartOpen(!isCartOpen)
@@ -40,7 +69,9 @@ function Home() {
                         <Menu onClick={toggleIsCartOpen}>
                             <img src="/images/menu.png" alt=""/>
                         </Menu>
-                        <h1 onClick={Logout}>Logout</h1>
+                        <RightSide>
+                            <h1 onClick={Logout}>Logout</h1>
+                        </RightSide>
                     </Navbar>
                     <Content>
                         <Outlet/>
@@ -62,11 +93,40 @@ const Navbar = styled.div`
     align-items: center;
     padding: 0 15px;
     h1 {
+        font-size: 26px;
+        font-weight: 600;
+        font-style: italic;
         &:hover {
             cursor: pointer;
         }
     }
 `;
+
+const RightSide = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    select {
+        margin-right: 10px; 
+        height: 30px;
+        width: 100px;
+        border: 1px solid blue;
+        border-radius: 50px;
+        -webkit-appearance: none;
+        text-align: center;
+        &:focus {
+            border: 1px solid blue;
+        }    
+        option {
+            background: white;
+            border: none;
+            height: 15px;
+            font-size: 18px;
+            padding: 20px;
+        } 
+    }
+`;
+
 const Menu = styled.div`
     max-width: 80px;
     img {
