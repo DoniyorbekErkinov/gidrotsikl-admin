@@ -2,9 +2,9 @@
 import { useContext, useState } from 'react';
 import styled from 'styled-components'
 import {
-    getAuth, signInWithEmailAndPassword, signOut
+    getAuth, signInWithEmailAndPassword
   } from 'firebase/auth';
-import { AuthContext } from "../../context";
+import { AuthContext } from "../../context/index";
 import { app } from '../../firebase/firebase';
 import { Navigate } from 'react-router-dom';
 const AUTH = getAuth(app)

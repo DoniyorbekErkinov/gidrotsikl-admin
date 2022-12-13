@@ -17,12 +17,15 @@ function RouterApp() {
         <Routes>        
           <Route path="/" element={<Home/>} >
             <Route index element={<Dashboard/>} />          
-            <Route path="/users" element={<Users/>} />          
+            <Route path="/users" element={<Users/>} />  
+            <Route path="*" element={<Navigate to="404" replace={true} />} />
+          <Route path="/login" element={<Navigate to="/" replace={true} />} />        
           </Route>          
         </Routes>
         :
         <Routes>
           <Route path="/login" element={<Login/>} />
+          <Route path="*" element={<Navigate to="/login" replace={true} />} />
         </Routes>}
     </>
   );
