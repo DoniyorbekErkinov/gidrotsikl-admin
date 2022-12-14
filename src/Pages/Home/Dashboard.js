@@ -7,7 +7,7 @@ function Dashboard() {
                     <div className="flex flex-wrap justify-between">
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="border-2 card1 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>
@@ -36,7 +36,7 @@ function Dashboard() {
                         </div>
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="card2 border-2 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>
@@ -65,7 +65,7 @@ function Dashboard() {
                         </div>
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="card3 border-2 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>
@@ -94,7 +94,7 @@ function Dashboard() {
                         </div>
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="card4 border-2 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>
@@ -123,7 +123,7 @@ function Dashboard() {
                         </div>
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="card5 border-2 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>
@@ -152,7 +152,7 @@ function Dashboard() {
                         </div>
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="card6 border-2 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>
@@ -181,7 +181,7 @@ function Dashboard() {
                         </div>
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="card7 border-2 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>
@@ -210,7 +210,7 @@ function Dashboard() {
                         </div>
                         <div className="md:w-1/4 sm:w-1/2 w-full">
                             <div className="card8 border-2 border-gray-50 shadow-lg m-4 p-2">
-                                <a href="" className="leading-10">
+                                <a className="leading-10">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-2xl leading-10">$50</p>

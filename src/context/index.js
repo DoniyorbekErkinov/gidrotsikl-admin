@@ -3,16 +3,16 @@ let token = !!localStorage.getItem('access_token')
 export const AuthContext = createContext(token);
 
 export const SideBarContext = createContext({
-    isCartOpen: true,
-    setIsCartOpen: () => {}
+    isMenuOpen: true,
+    setIsMenuOpen: () => {}
 });
 export const SideBarProvider = ({ children }) => {
-    const [isCartOpen, setIsCartOpen] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(true);
     
     
     const value = {
-        isCartOpen,
-        setIsCartOpen
+        isMenuOpen,
+        setIsMenuOpen
     };
     return <SideBarContext.Provider value={value}>{children}</SideBarContext.Provider>;
 };

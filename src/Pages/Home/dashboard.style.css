@@ -2,7 +2,6 @@
     border-radius: 20px;
     background-color: #ff9e6d;
     transition: all .3s;
-    scale: .98;
     outline: none;
 }
 
@@ -10,13 +9,10 @@
     border-radius: 20px;
     background: linear-gradient(145deg, #ff9e6d, #e6855c);
     box-shadow:  10px 10px 20px #99593d, -5px -5px 10px #ffcf8f;
-    scale: 1;
     outline: none;
-
 }
 
 .card2{
-    scale: .98;
     background-color: #57d5e6;
     border-radius: 20px;
     transition: all .3s;
@@ -25,7 +21,6 @@
 }
 
 .card2:hover{
-    scale: 1;
     border-radius: 20px;
     background: linear-gradient(145deg, #57d5e6, #68feff);
     box-shadow:  10px 10px 20px #34808a,
@@ -35,7 +30,6 @@
 }
 
 .card3{
-    scale: .98;
     background-color: #6dffac;
     border-radius: 20px;
     transition: all .3s;
@@ -44,7 +38,6 @@
 }
 
 .card3:hover{
-    scale: 1;
     border-radius: 20px;
     background: linear-gradient(145deg, #6dffac, #5ce691);
     box-shadow:  10px 10px 20px #3d9961,
@@ -53,7 +46,6 @@
 
 }
 .card4{
-    scale: .98;
     background-color: #ff6dc5;
     border-radius: 20px;
     transition: all .3s;
@@ -62,7 +54,6 @@
 }
 
 .card4:hover{
-    scale: 1;
     border-radius: 20px;
     background: linear-gradient(145deg, #ff6dc5, #e65ca6);
     box-shadow:  10px 10px 20px #993d6e,
@@ -71,7 +62,6 @@
 
 }
 .card5{
-    scale: .98;
     background-color: #ff6d6d;
     border-radius: 20px;
     transition: all .3s;
@@ -80,7 +70,6 @@
 }
 
 .card5:hover{
-    scale: 1;
     border-radius: 20px;
     background: linear-gradient(145deg, #ff6d6d, #e65c5c);
     box-shadow:  10px 10px 20px #993d3d,
@@ -89,7 +78,6 @@
 
 }
 .card6{
-    scale: .98;
     background-color: #9492ff;
     border-radius: 20px;
     transition: all .3s;
@@ -98,7 +86,6 @@
 }
 
 .card6:hover{
-    scale: 1;
     border-radius: 20px;
     background: linear-gradient(145deg, #9492ff, #8583e6);
     box-shadow:  10px 10px 20px #595899,
@@ -107,7 +94,6 @@
 
 }
 .card7{
-    scale: .98;
     background-color: #f5f583;
     border-radius: 20px;
     transition: all .3s;
@@ -116,7 +102,6 @@
 }
 
 .card7:hover{
-    scale: 1;
     border-radius: 20px;
     background: linear-gradient(145deg, #ffff89, #e6d673);
     box-shadow:  10px 10px 20px #998f4d,
@@ -125,7 +110,6 @@
 
 }
 .card8{
-    scale: .98;
     background-color: #e2acff;
     border-radius: 20px;
     transition: all .3s;
@@ -134,7 +118,6 @@
 }
 
 .card8:hover{
-    scale: 1;
     border-radius: 20px;
     background: linear-gradient(145deg, #e2acff, #b378db);
     box-shadow:  10px 10px 20px #886799,
