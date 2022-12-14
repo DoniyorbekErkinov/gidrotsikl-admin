@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { SideBarContext } from "../context/index";
+import { SideBarContext } from "./index";
  function Sidebar() {
     const { isMenuOpen, setIsMenuOpen } = useContext(SideBarContext);
 
-    const toggleIsMenuOpen = () => {
-        setIsMenuOpen(!isMenuOpen)
-    };
     let activeStyle = {
         color: "green",
         background: "#F3F4F6",
@@ -51,6 +48,13 @@ const Aside = styled.aside`
     background: white;
     width: 300px;
     transition: 1s;
+    @media(max-width: 900px) {
+        width: 35%;
+        height: 100%;
+        min-height: 100%;
+        margin-top: 0px;
+        position: fixed
+    }
     @media(max-width: 700px) {
         width: 75%;
         height: 100%;

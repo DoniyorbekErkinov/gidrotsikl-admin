@@ -2,13 +2,12 @@
 import {Fragment, useContext, useEffect, useState} from "react"
 import { Navigate, Outlet } from "react-router-dom"
 import styled from "styled-components";
-import Sidebar from "../../Components/Sidebar"
+import Sidebar from "../../context/Sidebar"
 import { SideBarContext } from "../../context/index";
 import {getAuth, signOut} from 'firebase/auth';
 import { AuthContext } from "../../context/index";
 import { app } from '../../firebase/firebase';
 import {useTranslation} from "react-i18next";
-import menus from "../../context/menu"
 const AUTH = getAuth(app)
 import i18next from "i18next";
 function Layout() {
@@ -44,7 +43,7 @@ function Layout() {
         setIsMenuOpen(!isMenuOpen)
     };
     const toggleIsCartOpenInMobile = () => {
-        if(window.innerWidth < 700) {
+        if(window.innerWidth < 900) {
             setIsMenuOpen(false)
         }
     };
@@ -57,9 +56,6 @@ function Layout() {
         })
 
     }
-    useEffect(() => {
-        console.log(menus)
-    }, [])
     return (
         <Fragment>
             <Wrapper>
@@ -120,19 +116,31 @@ const Content = styled.div`
     margin-top: 50px;
 `;
 const Side = styled.div`
-    width: 300px; 
-    margin-right: 250px;
+    width: 0px; 
+    margin-right: 140px;
+    @media(max-width: 900px) {
+        width: 0px;
+        margin-right: 0px;
+        padding: 0;
+    }
     @media(max-width: 700px) {
         width: 0;
-        margin-right: 0px;
+        margin-right: -50px;
     }
 `;
 const SideDesktop = styled.div`
     width: 300px; 
-    margin-right: -50px;
+    margin-right: -180px;
+    padding: 10px 30px;
+    @media(max-width: 1280px) {
+        width: 0px;
+        margin-right: 0px;
+        padding: 0;
+    }
     @media(max-width: 700px) {
         width: 0;
         margin-right: 0px;
+        padding: 0;
     }
 `;
 const Navbar = styled.div`
