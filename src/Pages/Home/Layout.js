@@ -82,9 +82,16 @@ function Layout() {
                     </RightSide>
                 </Navbar>
                 <Content onClick={toggleIsCartOpenInMobile}>
-                    <Side >
-                        <Sidebar/>
-                    </Side>
+                    {isMenuOpen 
+                        ?
+                            <Side >
+                                <Sidebar/>
+                            </Side> 
+                        : 
+                            <SideDesktop>
+                                <Sidebar/>
+                            </SideDesktop>
+                    }
                     <Outlet/>
                     <TOP>
                         <button 
@@ -110,10 +117,19 @@ const Wrapper = styled.div`
 const Content = styled.div`
     height: 100%;
     display: flex;
+    margin-top: 50px;
 `;
 const Side = styled.div`
     width: 300px; 
-    margin-right: 170px;
+    margin-right: 250px;
+    @media(max-width: 700px) {
+        width: 0;
+        margin-right: 0px;
+    }
+`;
+const SideDesktop = styled.div`
+    width: 300px; 
+    margin-right: -50px;
     @media(max-width: 700px) {
         width: 0;
         margin-right: 0px;

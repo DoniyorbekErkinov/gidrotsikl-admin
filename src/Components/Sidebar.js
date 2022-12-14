@@ -44,7 +44,6 @@ import { SideBarContext } from "../context/index";
 const Aside = styled.aside`
     height: 100%;
     min-height: 100%;
-    margin-top: 50px;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -56,7 +55,7 @@ const Aside = styled.aside`
         width: 75%;
         height: 100%;
         min-height: 100%;
-        margin-top: 50px;
+        margin-top: 0px;
         position: fixed
     }
 `;
