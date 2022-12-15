@@ -88,14 +88,25 @@ function Layout() {
                                 <Sidebar/>
                             </SideDesktop>
                     }
-                    <Outlet/>
+                    {isMenuOpen 
+                        ?
+                        <LayoutWrapperDesktop>
+                            <Outlet/>
+                        </LayoutWrapperDesktop>                        
+                        : 
+                        <LayoutWrapper>
+                            <Outlet/>
+                        </LayoutWrapper>
+                        
+                    }
+                    
                     <TOP>
                         <button 
                             onClick={() => {
                                 window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
                             }}
                         >
-                            1
+                            <img src="/images/up-arrow-svgrepo-com.svg" alt=""/>
                         </button>
                     </TOP>
                 </Content>
@@ -115,22 +126,42 @@ const Content = styled.div`
     display: flex;
     margin-top: 50px;
 `;
-const Side = styled.div`
-    width: 0px; 
-    margin-right: 140px;
-    @media(max-width: 900px) {
-        width: 0px;
+const LayoutWrapper = styled.div`
+    margin: 0 auto;
+    width: 100%;
+    margin-left: -40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+`;
+const LayoutWrapperDesktop = styled.div`
+    margin: 0 auto;
+    margin-left: 320px !important;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @media(min-width: 1280px) {
+        width: 100%;
         margin-right: 0px;
         padding: 0;
+        display: flex;
     }
-    @media(max-width: 700px) {
-        width: 0;
-        margin-right: -50px;
+    @media(max-width: 1280px) {
+        width: 100%;
+        margin-right: 0px;
+        padding: 0;
+        flex-direction: row;
     }
 `;
+const Side = styled.div`
+    width: 0; 
+    
+`;
 const SideDesktop = styled.div`
-    width: 300px; 
-    margin-right: -180px;
+    width: 0; 
+    margin-right: 0;
     padding: 10px 30px;
     @media(max-width: 1280px) {
         width: 0px;
@@ -211,26 +242,35 @@ const Menu = styled.div`
 `;
 const TOP = styled.div`
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 0px;
+    right: 0px;
     button {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         border: none;
         border-radius: 50px;
-        color: #ffffff;
-        background: green;
+        background: #ffffff;        
+        img {
+                width: 30px;
+                height: 30px;
+                background: transparent;
+                margin: auto;
+            }
     }
     @media(max-width: 700px) {
         bottom: 40px;
         right: 40px;
         button {
-            width: 45px;
-            height: 45px;
+            width: 85px;
+            height: 85px;
             border: none;
             border-radius: 50px;
-            color: #ffffff;
-            background: green;
+            background: #f6f6f6;
+            img {
+                width: 105px;
+                height: 35px;
+                transform: rotate(270deg);
+            }
         }
     }
 `;

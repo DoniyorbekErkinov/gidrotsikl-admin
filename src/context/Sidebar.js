@@ -34,6 +34,14 @@ import { SideBarContext } from "./index";
                 <span className="text-2xl"><i className="bx bx-home"></i></span>
                 <span>Departments</span>
             </NavLink>
+            <NavLink 
+                to={'/formik'} 
+                className="flex mt-2 items-center text-lg space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600" 
+                style={({ isActive }) => isActive ? activeStyle : undefined}
+            >
+                <span className="text-2xl"><i className="bx bx-home"></i></span>
+                <span>Formik</span>
+            </NavLink>
         </Aside>
         : null
     );
