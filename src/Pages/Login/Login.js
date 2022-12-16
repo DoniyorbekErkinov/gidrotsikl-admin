@@ -7,50 +7,76 @@ import {
 import { AuthContext } from "../../context/index";
 import { app } from '../../firebase/firebase';
 import { Navigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { useTranslation } from 'react-i18next';
 const AUTH = getAuth(app)
 function Login() {
-    const [authData, setAuth] = useState({email: "", password: ""})
     const { isAuth, setIsAuth } = useContext(AuthContext)
-
-    function Login() {
-        signInWithEmailAndPassword(AUTH, authData.email, authData.password).then(res => {
+    const { t } = useTranslation()
+    const initialValues = {
+        email: "",
+        password: ""
+    }
+    const onSubmit = values => {
+        signInWithEmailAndPassword(AUTH, values.email, values.password).then(res => {
             localStorage.setItem('access_token', res.user.accessToken)
             setIsAuth(!!localStorage.getItem('access_token'))
             return <Navigate to={'/'} replace/>
-          }).catch(err => {
+          }).catch((err) => {
             console.log(err);
           })
     }
-    const handleInputs = (event) => {
-        let inputs = { [event.target.name]: event.target.value }
-        setAuth({ ...authData, ...inputs })        
-      }
+    const validate = (values) => {
+        let errors = {}
+
+        if(!values.email) {
+            errors.email =  t('errors.in_correct_email')
+        }
+
+        if(!values.password) {
+            errors.password = t('errors.in_correct_password')
+        }
+        return errors
+    }
+    const formik = useFormik({        
+        initialValues,
+        validate,
+        onSubmit
+    })
     return (
         <Container>
             <Content>
                 <Image>
                     <img src="/images/login.svg" alt=""/>
                 </Image>
-                <Form>
-                    <h1>Log In</h1>
+                <Form onSubmit={formik.handleSubmit}>
+                    <h1>{t('forms.login')}</h1>
                     <UserName>
-                        <label htmlFor='email'>Email</label>
+                        <label htmlFor='email'>{t('forms.email')}</label>
                         <input 
-                            onChange={event => handleInputs(event)} 
                             type="text"
                             placeholder='admin@admin.admin'
                             id='email' 
-                            name='email' />
+                            name='email'
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.email}
+                        />
+                        {formik.touched.email && formik.errors.email ? <span className="text-xs text-center text-red-500">{formik.errors.email} *</span> : null}
                     </UserName>
                     <Password>
-                        <label htmlFor='password'>Password</label>
-                        <input 
-                            onChange={event => handleInputs(event)} 
+                        <label htmlFor='password'>{t('forms.password')}</label>
+                        <input                              
                             type="password"
                             id='password' 
-                            name='password'/>
+                            name='password'
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.password}
+                        />
+                    {formik.touched.password && formik.errors.password ? <span className="text-xs text-center text-red-500">{formik.errors.password} *</span> : null}
                     </Password>
-                    <Submit onClick={Login}>Log In</Submit>
+                    <Submit type='submit'>{t('forms.login')}</Submit>
                 </Form>
             </Content>
             <p style={{textAlign: 'center', background: '#e5e5eb', padding: 5}}>Login: admin@admin.admin </p>
@@ -89,7 +115,7 @@ const Image = styled.div`
         display: none;
     }
 `;
-const Form = styled.div`
+const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;

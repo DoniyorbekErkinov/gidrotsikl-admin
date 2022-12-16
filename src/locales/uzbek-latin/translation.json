@@ -1,3 +1,25 @@
 {
-    "message": "Salom world"
+    "forms": {
+        "login": "Tizimga kirish",
+        "email": "Elektron pochta",
+        "password": "Maxfiy so'z"
+    },
+    "errors": {
+        "in_correct_email": "Elektron pochta noto'g'ri",
+        "in_correct_password": "Maxfiy so'z no'to'gri"
+    },
+    "actions": {
+        "logout": "Tizimdan chiqish",
+        "add": "Qo'shish"
+    },
+    "menu": {
+        "dashboard": "Dashboard",
+        "shops": "Do'konlar"
+    }, 
+    "shops": {
+        "title": "Do'konlar"
+    },
+    "others": {
+        "languages": "Tillar"
+    }
 }

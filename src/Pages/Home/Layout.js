@@ -66,7 +66,7 @@ function Layout() {
                     <RightSide>
                         <Languages className={'languages'}>
                             <select onChange={changeLang}>
-                                <option>Languages</option>
+                                <option>{t('others.languages')}</option>
                                 {language.map((option) => (
                                     <option value={option.code} key={option.code} >
                                         {option.name}
@@ -74,7 +74,7 @@ function Layout() {
                                 ))}
                             </select>
                         </Languages>
-                        <h1 onClick={Logout}>Logout</h1>
+                        <h1 onClick={Logout}>{t('actions.logout')}</h1>
                     </RightSide>
                 </Navbar>
                 <Content onClick={toggleIsCartOpenInMobile}>

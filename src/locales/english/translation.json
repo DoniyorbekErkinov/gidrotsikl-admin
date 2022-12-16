@@ -1,3 +1,25 @@
 {
-    "message": "Hello world"
+    "forms": {
+        "login": "Sign In",
+        "email": "E-mail",
+        "password": "Password"
+    },
+    "errors": {
+        "in_correct_email": "Invalid Email",
+        "in_correct_password": "Invalid Password"
+    },
+    "actions": {
+        "logout": "Log out",
+        "add": "Add"
+    },
+    "menu": {
+        "dashboard": "Dashboard",
+        "shops": "Shops"
+    },  
+    "shops": {
+        "title": "Shops"
+    },
+    "others": {
+        "languages": "Languages"
+    }
 }

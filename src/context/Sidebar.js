@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { SideBarContext } from "./index";
  function Sidebar() {
     const { isMenuOpen, setIsMenuOpen } = useContext(SideBarContext);
-
+    const { t } = useTranslation()
     let activeStyle = {
         color: "green",
         background: "#F3F4F6",
@@ -24,7 +25,7 @@ import { SideBarContext } from "./index";
                 style={({ isActive }) => isActive ? activeStyle : undefined}
             >
                 <span className="text-2xl"><i className="bx bx-home"></i></span>
-                <span>Dashboard</span>
+                <span>{ t('menu.dashboard') }</span>
             </NavLink>
             <NavLink 
                 to={'/departments'} 
@@ -32,7 +33,7 @@ import { SideBarContext } from "./index";
                 style={({ isActive }) => isActive ? activeStyle : undefined}
             >
                 <span className="text-2xl"><i className="bx bx-home"></i></span>
-                <span>Departments</span>
+                <span>{ t('menu.shops') }</span>
             </NavLink>
             <NavLink 
                 to={'/formik'} 

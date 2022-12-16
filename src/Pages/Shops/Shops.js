@@ -4,7 +4,9 @@ import './shop.style.css'
 import { database } from "../../firebase/firebase";
 import { setDoc, doc, onSnapshot, collection, orderBy, query } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
-function Shops(params) {   
+import { useTranslation } from "react-i18next";
+function Shops(params) { 
+    const { t } = useTranslation()  
     const [shops, setShops] = useState([])        
     useEffect(() => {
         const shopsColRef = collection(database, 'shops')
@@ -19,8 +21,8 @@ function Shops(params) {
     return (
         <WRAPPER>
             <div className="shop_header" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
-                <h1 style={{ fontSize: 20, fontWeight: 600}}>Do'konlar</h1>
-                <BUTTON>Add</BUTTON>
+                <h1 style={{ fontSize: 20, fontWeight: 600}}>{t('shops.title')}</h1>
+                <BUTTON>{t("actions.add")}</BUTTON>
             </div>
             <ContentComponent>
                 {shops.map(shop => (
