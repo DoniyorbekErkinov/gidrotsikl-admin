@@ -1,11 +1,25 @@
 {
     "forms": {
-        "login": "Tizimga kirish",
-        "email": "Elektron pochta",
-        "password": "Maxfiy so'z"
+        "login": "Войти",
+        "email": "Электронная почта",
+        "password": "Пароль"
     },
     "errors": {
-        "in_correct_email": "Elektron pochta noto'g'ri",
-        "in_correct_password": "Maxfiy so'z no'to'gri"
+        "in_correct_email": "Неверный адрес электронной почты",
+        "in_correct_password": "Неверный пароль"
+    },
+    "actions": {
+        "logout": "Выйти",
+        "add": "Добавить"
+    },
+    "menu": {
+        "dashboard": "Приборная панель",
+        "shops": "Магазины"
+    },  
+    "shops": {
+        "title": "Магазины"
+    },
+    "others": {
+        "languages": "Языки"
     }
 }

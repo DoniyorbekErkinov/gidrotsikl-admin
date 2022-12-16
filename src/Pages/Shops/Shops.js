@@ -2,21 +2,23 @@ import styled from "styled-components"
 import ContentComponent from "../../Components/Content.component";
 import './shop.style.css'
 import { database } from "../../firebase/firebase";
-import { setDoc, doc, onSnapshot, collection, orderBy, query } from "firebase/firestore";
-import { useEffect, useMemo, useState } from "react";
+import { onSnapshot, collection } from "firebase/firestore";
+import {  useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import ShopsTable from "./ShopsTable";
 function Shops(params) { 
     const { t } = useTranslation()  
-    const [shops, setShops] = useState([])        
-    useEffect(() => {
+    const [shops, setShops] = useState([])  
+     
+      useEffect(() => {
         const shopsColRef = collection(database, 'shops')
         onSnapshot(shopsColRef, (snapshot) => {
-          setShops(snapshot.docs.map(doc => ({
-            id: doc.id,
-            ...doc.data()
-          })))
+            let array = []
+            snapshot.docs.forEach((doc) => {
+                array.push({...doc.data(), id: doc.id})
+            });
+            setShops(array);
         })
-        console.log(shops);
       },[])
     return (
         <WRAPPER>
@@ -25,12 +27,14 @@ function Shops(params) {
                 <BUTTON>{t("actions.add")}</BUTTON>
             </div>
             <ContentComponent>
-                {shops.map(shop => (
-                    <div key={shop.id}>
-                        <h1>{shop.address}</h1>
-                        <p>{shop.phone}</p>
-                    </div>
-                ))}
+                {
+                    shops.map((el) =>{ return (
+                        <div key={el.id}>
+                            <p>{el.address}</p>
+                        </div>
+                    )})
+                }
+                {/* <ShopsTable data={shops}></ShopsTable> */}
             </ContentComponent>
         </WRAPPER>
     )

@@ -21,5 +21,8 @@
     },
     "others": {
         "languages": "Tillar"
+    },
+    "messages": {
+        "login_seccess": "Tizimga muvaffaqiyatli kirildi."
     }
 }

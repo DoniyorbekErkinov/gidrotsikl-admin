@@ -1,11 +1,25 @@
 {
     "forms": {
-        "login": "Tizimga kirish",
-        "email": "Elektron pochta",
-        "password": "Maxfiy so'z"
+        "login": "Тизимга кириш",
+        "email": "Электрон почта",
+        "password": "Махфий сўз"
     },
     "errors": {
-        "in_correct_email": "Elektron pochta noto'g'ri",
-        "in_correct_password": "Maxfiy so'z no'to'gri"
+        "in_correct_email": "Электрон почта нотўғри",
+        "in_correct_password": "Махфий сўз нўтўгри"
+    },
+    "actions": {
+        "logout": "Тизимдан чиқиш",
+        "add": "Қўшиш"
+    },
+    "menu": {
+        "dashboard": "Дашбоард",
+        "shops": "Дўконлар"
+    },  
+    "shops": {
+        "title": "Дўконлар"
+    },
+    "others": {
+        "languages": "Тиллар"
     }
 }
