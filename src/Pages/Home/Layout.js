@@ -257,21 +257,5 @@ const TOP = styled.div`
                 margin: auto;
             }
     }
-    @media(max-width: 700px) {
-        bottom: 40px;
-        right: 40px;
-        button {
-            width: 85px;
-            height: 85px;
-            border: none;
-            border-radius: 50px;
-            background: #f6f6f6;
-            img {
-                width: 105px;
-                height: 35px;
-                transform: rotate(270deg);
-            }
-        }
-    }
 `;
 export default Layout;

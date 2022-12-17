@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import ContentComponent from "../../Components/Content.component";
 import './shop.style.css'
 import { database } from "../../firebase/firebase";
 import { onSnapshot, collection, doc, deleteDoc } from "firebase/firestore";
@@ -60,29 +59,23 @@ function Shops() {
     }
     const data = useMemo(() => shops, [shops])
     return (
-        <WRAPPER>
-            <div className="shop_header" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
+        <div>
+            <div className="shop_header" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <h1 style={{ fontSize: 20, fontWeight: 600}}>{t('shops.title')}</h1>
                 <BUTTON onClick={() => setIsModalOpen(true)}>{t("actions.add")}</BUTTON>
             </div>
-            <ContentComponent>
+            <div className="tableWrapper">
                 <ShopsTable deleteData={deleteData} getSingleFile={getSingleFile}  shops={data}></ShopsTable>
-            </ContentComponent>
+            </div>
             {
                 isModalOpen 
                     ?
                 <AddUpdateForm singleData={singleData}  toggleModal={closeModal}></AddUpdateForm>
                     : null
             }
-        </WRAPPER>
+        </div>
     )
 }
-const WRAPPER = styled.div`
-    max-width: 1128px !important;
-    width: 100%;
-    margin: 0 auto !important;
-    position: relative;
-`;
 const BUTTON = styled.button`
     width: 100px;
     background: #04AA6D;

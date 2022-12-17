@@ -8,7 +8,6 @@ function ShopsTable({shops, getSingleFile, deleteData}) {
     const data = useMemo(() => shops, [shops])
    const { t } = useTranslation()
    return (
-       <div>
             <table className="text-center border-emerald-200 rounded-lg">
                 <thead>
                     <tr>
@@ -52,7 +51,6 @@ function ShopsTable({shops, getSingleFile, deleteData}) {
                 }
                     </tbody>
             </table>
-       </div>
    )
 }
 export default ShopsTable
