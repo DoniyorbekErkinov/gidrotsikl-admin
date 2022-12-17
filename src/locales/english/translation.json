@@ -1,16 +1,26 @@
 {
     "forms": {
-        "login": "Sign In",
         "email": "E-mail",
         "password": "Password"
     },
+    "table": {
+        "address": "Address",
+        "phone": "Phone",
+        "countOdProducts": "Count of products",
+        "actions": "Actions"
+    },
     "errors": {
-        "in_correct_email": "Invalid Email",
-        "in_correct_password": "Invalid Password"
+        "required": "Required",
+        "in_correct_email": "Incorrect e-mail",
+        "in_correct_password": "Incorrect password"
     },
     "actions": {
-        "logout": "Log out",
-        "add": "Add"
+        "login": "Sign In",
+        "logout": "Sign Out",
+        "save": "Save",
+        "add": "Add",
+        "update": "Edit",
+        "delete": "Delete"
     },
     "menu": {
         "dashboard": "Dashboard",
@@ -21,5 +31,10 @@
     },
     "others": {
         "languages": "Languages"
+    },
+    "messages": {
+        "login_seccess": "Successfully Signed In",
+        "saved": "Successfully Saved",
+        "edited": "Successfully Edited"
     }
 }

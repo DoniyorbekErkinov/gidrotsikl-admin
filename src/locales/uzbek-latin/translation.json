@@ -1,16 +1,26 @@
 {
-    "forms": {
-        "login": "Tizimga kirish",
+    "forms": {        
         "email": "Elektron pochta",
         "password": "Maxfiy so'z"
     },
+    "table": {
+        "address": "Manzil",
+        "phone": "Telefon",
+        "countOdProducts": "Mahsulotlar soni",
+        "actions": "Amallar"
+    },
     "errors": {
+        "required": "To'ldirish majburiy",
         "in_correct_email": "Elektron pochta noto'g'ri",
         "in_correct_password": "Maxfiy so'z no'to'gri"
     },
     "actions": {
+        "login": "Tizimga kirish",
         "logout": "Tizimdan chiqish",
-        "add": "Qo'shish"
+        "save": "Saqlash",
+        "add": "Qo'shish",
+        "update": "Tahrirlash",
+        "delete": "O'chirish"
     },
     "menu": {
         "dashboard": "Dashboard",
@@ -23,6 +33,8 @@
         "languages": "Tillar"
     },
     "messages": {
-        "login_seccess": "Tizimga muvaffaqiyatli kirildi."
+        "login_seccess": "Tizimga muvaffaqiyatli kirildi.",
+        "saved": "Muvaffaqiyatli saqlandi",
+        "edited": "Muvaffaqiyatli tahrirlandi"
     }
 }

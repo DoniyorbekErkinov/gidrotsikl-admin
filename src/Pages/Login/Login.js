@@ -87,7 +87,7 @@
                          />
                      {formik.touched.password && formik.errors.password ? <span className="text-xs text-center text-red-500">{formik.errors.password} *</span> : null}
                      </Password>
-                     <Submit type='submit'>{t('forms.login')}</Submit>
+                     <Submit type='submit'>{t('actions.login')}</Submit>
                  </Form>
              </Content>
              <p style={{textAlign: 'center', background: '#e5e5eb', padding: 5}}>Login: admin@admin.admin </p>

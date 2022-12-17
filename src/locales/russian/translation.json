@@ -1,16 +1,26 @@
 {
     "forms": {
-        "login": "Войти",
         "email": "Электронная почта",
         "password": "Пароль"
     },
+    "table": {
+        "address": "Адрес",
+        "phone": "Телефон",
+        "countOdProducts": "Количество продуктов",
+        "actions": "Действия"
+    },
     "errors": {
-        "in_correct_email": "Неверный адрес электронной почты",
-        "in_correct_password": "Неверный пароль"
+        "required": "Заполнение обязательно",
+        "in_correct_email": "Электронная почта недействительна",
+        "in_correct_password": "Пароль неправильный"
     },
     "actions": {
-        "logout": "Выйти",
-        "add": "Добавить"
+        "login": "Войти",
+        "logout": "Выход",
+        "save": "Сохранять",
+        "add": "Добавлять",
+        "update": "Редактирование",
+        "delete": "Удалить"
     },
     "menu": {
         "dashboard": "Приборная панель",
@@ -21,5 +31,10 @@
     },
     "others": {
         "languages": "Языки"
+    },
+    "messages": {
+        "login_seccess": "Войти успешно",
+        "saved": "Успешно сохранено",
+        "edited": "Отредактировано успешно"
     }
 }
